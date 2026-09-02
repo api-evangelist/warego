@@ -1,0 +1,56 @@
+name: WareGo
+description: >-
+  Cloud-based Warehouse Management System (WMS) for wholesalers, distributors, 3PLs, and ecommerce businesses, covering
+  inventory tracking, order fulfillment, serial-number tracking, and supply-chain visibility. Sold as a tiered SaaS
+  platform.
+url: https://raw.githubusercontent.com/api-evangelist/warehouse-management-software/refs/heads/main/apis.yml
+created: '2026-09-02'
+modified: '2026-09-02'
+specificationVersion: '0.21'
+tags:
+  - Warehouse Management
+  - WMS
+  - Inventory Management
+  - Order Management
+  - Fulfillment
+  - Supply Chain
+  - Logistics
+  - 3PL
+  - Ecommerce
+  - Retail
+  - Wholesale Distribution
+  - Manufacturing
+apis:
+  - name: WareGo
+    description: >-
+      WareGo agent-native content surface. A live, well-formed llms.txt provides a curated sitemap of product, feature,
+      and industry pages for LLM discovery. No public API, MCP server, or agent skills exist; the provider claims 'Open
+      APIs' but access is gated behind sales/onboarding with no documented endpoints or specs.
+    humanURL: https://warego.co
+    baseURL: https://warego.co
+    tags:
+      - Warehouse Management
+      - WMS
+      - Inventory Management
+      - Order Management
+      - Fulfillment
+      - Supply Chain
+      - Logistics
+      - 3PL
+      - Ecommerce
+      - Retail
+      - Wholesale Distribution
+      - Manufacturing
+    properties:
+      - type: LLMsTxt
+        url: https://warego.co/llms.txt
+      - type: Documentation
+        url: https://warego.co/customer-support/connections-and-integrations/
+maintainers:
+  - FN: WareGo
+    url: https://warego.co
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 80
+  at: '2026-09-02T13:41:22.946Z'
