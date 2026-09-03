@@ -1,0 +1,130 @@
+generated: '2026-09-02'
+method: searched
+source: https://warego.co/industries/3pl-wms-software/
+docs:
+  - https://warego.co/industries/3pl-wms-software/
+  - https://warego.co/customer-support/connections-and-integrations/
+note: >-
+  WareGo publishes NO machine-readable contract (no OpenAPI, AsyncAPI, GraphQL, gRPC or WSDL was found
+  on any host — see x-coverage in apis.yml). Every entry below is therefore a PROSE CLAIM made on
+  WareGo's own marketing pages, recorded verbatim with the URL that states it. None of it could be
+  verified against a contract, because there is no contract to read. `conforms` is set true only for
+  claims WareGo states plainly about itself as a shipped, audited property; `conforms: false` marks
+  claims that name a standard the platform is said to speak but which no published artifact confirms.
+conformance:
+  - id: soc2-type-ii
+    conforms: true
+    claim: "SOC 2 Type II — Annually audited"
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "SOC 2 Type II / Annually audited"
+      basis: provider-published claim; no attestation letter, trust center or report portal found
+  - id: gdpr
+    conforms: true
+    claim: "GDPR-Ready — EU data compliant"
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "GDPR-Ready / EU data compliant"
+      basis: provider-published claim on the 3PL WMS page; privacy policy at https://warego.co/privacy-policy/ (200)
+  - id: tls13
+    conforms: true
+    claim: "TLS 1.3 / AES-256 — in transit & at rest"
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "TLS 1.3 / AES-256 / In transit & at rest"
+      basis: >-
+        Independently corroborated for the web tier — the live TLS probe in
+        security/warego-domain-security.yml negotiated TLSv1.3 on warego.co. At-rest encryption is a
+        claim only.
+  - id: saml-sso
+    conforms: true
+    claim: "SSO (SAML/OAuth) — Enterprise auth"
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "SSO (SAML/OAuth) / Enterprise auth"
+      basis: >-
+        Product-login claim, not an API auth model. No OAuth authorization-server metadata is served
+        (/.well-known/oauth-authorization-server 404) and no scopes or token endpoints are documented,
+        so scopes/ and authentication/ artifacts are deliberately NOT written.
+  - id: rbac
+    conforms: true
+    claim: "Role-Based Access — Granular permissions"
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "Role-Based Access / Granular permissions"
+  - id: audit-trail
+    conforms: true
+    claim: "Full Audit Trails — every change recorded"
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "Full Audit Trails"
+  - id: rest
+    conforms: false
+    claim: "REST API"
+    evidence:
+      url: https://warego.co/customer-support/connections-and-integrations/
+      status: 200
+      quote: "WareGo provides Open APIs for smooth connectivity. Access API documentation to understand endpoints, authentication, and request structures."
+      basis: >-
+        Claimed but unverifiable. The support guide tells integrators to "access API documentation" and
+        "set up API keys" but links to no reference, and step 3 routes the integrator to WareGo's
+        product team instead. No endpoint, base URL, auth scheme or spec is published anywhere.
+  - id: webhooks
+    conforms: false
+    claim: "Webhooks"
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "EDI & API ... REST API / Webhooks"
+      basis: >-
+        Named as a capability tile in an integration grid. No event catalog, payload schema, subscription
+        endpoint or retry/signature policy is published, so no Webhooks pointer and no asyncapi/ artifact
+        is emitted — a tile is not a documented event surface.
+  - id: rfc9457
+    conforms: false
+    claim: null
+    evidence:
+      basis: No error envelope is published; no problem+json media type observed. errors/ not written.
+domain_standards:
+  - id: ansi-x12-edi
+    name: ANSI ASC X12 EDI (supply-chain transaction sets)
+    conforms: false
+    claim: "EDI 850 PO, EDI 856 ASN, EDI 810 Invoice, EDI 940/944"
+    transaction_sets:
+      - code: '850'
+        name: Purchase Order
+      - code: '856'
+        name: Advance Ship Notice (ASN)
+      - code: '810'
+        name: Invoice
+      - code: '940'
+        name: Warehouse Shipping Order
+      - code: '944'
+        name: Warehouse Stock Transfer Receipt Advice
+    evidence:
+      url: https://warego.co/industries/3pl-wms-software/
+      status: 200
+      quote: "EDI & API: EDI 850 PO, EDI 856 ASN, EDI 810 Inv, EDI 940/944, REST API, Webhooks"
+      basis: >-
+        This is the domain standard that matters in WMS/3PL — a buyer who already speaks X12 850/856/810/
+        940/944 integrates with no bespoke connector. WareGo names the exact transaction sets, which is a
+        stronger signal than a generic "EDI supported" badge. BUT `domain_standard_conformance` reads the
+        CONTRACT, not a marketing page, and WareGo publishes no contract in which the declaration can be
+        located. Recorded as claimed-but-unverified (conforms: false) rather than credited. Re-check this
+        entry the moment WareGo publishes a spec.
+  - id: sps-commerce-edi
+    name: SPS Commerce EDI network
+    conforms: false
+    claim: SPS Commerce listed as a named integration
+    evidence:
+      url: https://warego.co/integrations/sps-commerce-integration/
+      status: 200
+      basis: >-
+        Integration landing page exists; corroborates the X12 claim above as a delivery channel but is
+        still a partner listing, not a conformance artifact.

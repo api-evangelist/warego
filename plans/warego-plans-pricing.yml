@@ -1,0 +1,34 @@
+generated: '2026-09-02'
+method: searched
+source: https://warego.co/pricing/
+plan_count: 0
+currency: null
+free_trial: true
+note: >-
+  WareGo publishes a pricing page at https://warego.co/pricing/ (title "Pricing Plans and Packages |
+  WareGo (WMS)", present in search indexes), but it could NOT be read: the site's WP Defender plugin
+  behind Cloudflare returns HTTP 403 with a lockout page to every non-browser client, including a full
+  browser User-Agent with navigation headers and an independent fetcher on a different egress IP. The
+  page is LIVE, not dead — per pipeline rules a bot/WAF challenge is not a dead pointer — so the
+  Pricing pointer is retained in apis.yml. plan_count is 0 because no tier could be read from the
+  provider's own surface, NOT because WareGo publishes no plans.
+  Third-party aggregators quote figures (a $350/mo basic and $550/mo advanced tier, and separately a
+  $499/mo standard tier) but those numbers disagree with each other and none is provider-published, so
+  they are deliberately NOT recorded as plans. A free trial and a "Start for free" call to action are
+  confirmed on WareGo's own homepage (200).
+plans: []
+pricing_model:
+  basis: per monthly order volume, with add-on features billed separately
+  basis_source: third-party summary only — NOT confirmed from warego.co; treat as unverified
+  contact_sales: https://warego.co/signup/
+  demo_booking: https://meetings.hubspot.com/obaid-chawla/requirements-gathering-meeting-warego-wms
+evidence:
+  - url: https://warego.co/pricing/
+    status: 403
+    note: WP Defender lockout page, 9240 bytes, served by Cloudflare; retried with browser UA + nav headers and via an independent fetcher
+  - url: https://warego.co/
+    status: 200
+    note: homepage carries "Start A Free Trial" and "Start for free"
+  - url: https://warego.co/signup/
+    status: 200
+    note: resolves to "Schedule a Call or a Demo" — the sign-up funnel is sales-assisted, not self-serve

@@ -1,0 +1,71 @@
+generated: '2026-09-02'
+method: probed
+source: live HTTP GET of the named /.well-known/ path list on every WareGo host
+note: >-
+  Every named path returned 404 on the apex marketing host, so NO WellKnown or SecurityTxt pointer is
+  emitted in apis.yml — this file records a verified absence, not a served surface. The api./docs./
+  developer./app./status. subdomains are a WILDCARD DNS catch-all (all resolve to 13.213.83.87) that
+  answers HTTP 200 with the same WordPress marketing HTML for EVERY path, including
+  /.well-known/agent-card.json and /openapi.json. Those 200s are soft-200 false positives and are
+  recorded as misses. /.well-known/ai-plugin.json returned 403 from the site's WP Defender / Cloudflare
+  edge rather than 404, so its true state is unknown rather than confirmed absent.
+hosts:
+  - host: warego.co
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+        note: WP Defender / Cloudflare edge block, not a 404 — absence unconfirmed
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+  - host: api.warego.co
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: >-
+          Rejected. Wildcard-DNS catch-all returned the WareGo WordPress marketing homepage as
+          text/html for this path (and for /openapi.json, /swagger.json, /v1/openapi.json). Not a
+          document.
+  - host: docs.warego.co
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: Rejected — same wildcard catch-all HTML shell as api.warego.co.
+  - host: developer.warego.co
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: Rejected — same wildcard catch-all HTML shell as api.warego.co.
+  - host: app.warego.co
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: Rejected — same wildcard catch-all HTML shell as api.warego.co.
+  - host: status.warego.co
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: >-
+          Rejected — same wildcard catch-all HTML shell. There is no status page at this host; it is
+          the marketing site.

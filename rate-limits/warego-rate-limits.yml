@@ -1,0 +1,24 @@
+generated: '2026-09-02'
+method: searched
+source: https://warego.co/customer-support/connections-and-integrations/
+limit_count: 0
+note: >-
+  No rate limits are published. WareGo has no developer portal, no API reference and no machine-readable
+  contract, so there is no page on which limits could be stated and no unauthenticated endpoint on which
+  they could be observed. The only integration guidance WareGo publishes tells the reader to "access API
+  documentation" and "set up API keys" without linking either, and routes them to the product team.
+  limit_count 0 is an honest measured zero, not an unchecked field.
+limits: []
+headers:
+  observed: []
+  note: >-
+    No response headers could be observed — there is no reachable API host. The api./app./developer.
+    subdomains are a wildcard DNS catch-all serving the WordPress marketing site.
+exhaustion_status_code: null
+evidence:
+  - url: https://warego.co/customer-support/connections-and-integrations/
+    status: 200
+    note: the sole integration guide; mentions API keys and endpoints, states no limits
+  - url: https://api.warego.co/openapi.json
+    status: 200
+    note: soft-200 — wildcard catch-all returning marketing HTML, not a spec

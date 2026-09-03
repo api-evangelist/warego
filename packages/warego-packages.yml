@@ -1,0 +1,38 @@
+generated: '2026-09-02'
+method: searched
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, api.github.com) + warego.co docs
+package_count: 0
+official_sdk_count: 0
+note: >-
+  No first-party client library exists in any public registry, and no GitHub organization exists. This
+  is a notable negative for a vendor that describes itself as "API-first": the integration guide tells
+  developers to "set up API keys and authentication credentials" but ships nothing for them to install.
+  NO SDKs or Packages pointer is emitted in apis.yml — this file records a verified absence.
+packages: []
+registries_searched:
+  - registry: npm
+    queries: [warego, "@warego/sdk", warego-sdk, warego-api]
+    result: 404 on every query
+    version: null
+  - registry: pypi
+    queries: [warego, warego-sdk]
+    result: 404 on every query
+    version: null
+  - registry: github
+    queries: [warego, warego-co, waregoglobal, warego-wms]
+    result: 404 on every org lookup — WareGo has no GitHub organization
+    version: null
+mobile_apps:
+  - name: WareGo
+    platform: android
+    package_id: com.wms.epc
+    store_url: https://play.google.com/store/apps/details?id=com.wms.epc
+    official: true
+    version: null
+    published: null
+    note: >-
+      End-user warehouse operator app, not a developer SDK — recorded for identity only and NOT counted
+      toward package_count or sdk_count. The `com.wms.epc` application id indicates WareGo is a brand
+      running on an "EPC WMS" platform; a WareGo-branded login shell was also found at
+      warego.staging-epcwms.com, but that host failed TLS verification on probe and is a staging
+      environment, so no ownership relationship is asserted and nothing was harvested from it.

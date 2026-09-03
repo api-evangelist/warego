@@ -1,0 +1,46 @@
+generated: '2026-09-02'
+method: searched
+source: https://warego.co/industries/3pl-wms-software/
+note: >-
+  No API lifecycle governance is published: no versioning scheme, no deprecation policy, no Sunset or
+  Deprecation headers (RFC 8594), no changelog and no status page. status.warego.co exists in DNS only
+  as part of a wildcard record and serves the marketing site, so NO StatusPage pointer is emitted. The
+  only lifecycle-adjacent commitment WareGo makes is an uptime claim on its own marketing pages, with
+  no SLA document, no credit schedule and no measurement page behind it.
+versioning:
+  scheme: null
+  current_version: null
+  documented: false
+deprecation:
+  policy_url: null
+  documented: false
+  sunset_header: false
+  deprecation_header: false
+sla:
+  published_document: false
+  uptime_claim: "100% Uptime SLA — multi-region hosting"
+  uptime_claim_source: https://warego.co/industries/3pl-wms-software/
+  secondary_claim: "Uptime is virtually 100%"
+  secondary_claim_source: https://warego.co/
+  credits: null
+  note: >-
+    Marketing claim only. No SLA terms, no credit schedule and no historical uptime record was found.
+    The Terms and Conditions page (200) is a general SaaS agreement, not an API SLA.
+status_page:
+  url: null
+  present: false
+  note: >-
+    status.warego.co resolves via the wildcard A record to 13.213.83.87 and returns the WareGo
+    WordPress marketing homepage with HTTP 200 on every path. That is not a status page.
+changelog:
+  url: null
+  present: false
+  note: The blog at https://warego.co/blog/ (200) is marketing/SEO content, not a dated product changelog.
+evidence:
+  - url: https://warego.co/industries/3pl-wms-software/
+    status: 200
+  - url: https://status.warego.co/
+    status: 200
+    note: wildcard catch-all serving the marketing site — recorded as absent
+  - url: https://warego.co/terms-conditions/
+    status: 200
