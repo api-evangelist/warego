@@ -66,6 +66,8 @@ generated:
   confidence: 80
   at: '2026-09-02T13:41:22.946Z'
 common:
+- type: Website
+  url: https://www.warego.co/
 - type: DomainSecurity
   url: security/warego-domain-security.yml
 - type: Conformance
