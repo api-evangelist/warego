@@ -21,6 +21,20 @@ tags:
   - Supply Chain
   - Logistics
   - 3PL
+  - E-Commerce
+  - Retail
+  - Wholesale Distribution
+  - Manufacturing
+  - EDI
+tags_raw:
+  - Warehouse Management
+  - WMS
+  - Inventory Management
+  - Order Management
+  - Fulfillment
+  - Supply Chain
+  - Logistics
+  - 3PL
   - Ecommerce
   - Retail
   - Wholesale Distribution
@@ -39,6 +53,19 @@ apis:
     humanURL: https://warego.co
     baseURL: https://warego.co
     tags:
+      - Warehouse Management
+      - WMS
+      - Inventory Management
+      - Order Management
+      - Fulfillment
+      - Supply Chain
+      - Logistics
+      - 3PL
+      - E-Commerce
+      - Retail
+      - Wholesale Distribution
+      - Manufacturing
+    tags_raw:
       - Warehouse Management
       - WMS
       - Inventory Management
