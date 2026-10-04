@@ -15,7 +15,7 @@ specificationVersion: '0.21'
 tags:
   - Warehouse Management
   - WMS
-  - Inventory Management
+  - Inventory
   - Order Management
   - Fulfillment
   - Supply Chain
@@ -51,11 +51,10 @@ apis:
       the reader to the WareGo product team instead, so the API is real to customers and invisible to
       the public web.
     humanURL: https://warego.co
-    baseURL: https://warego.co
     tags:
       - Warehouse Management
       - WMS
-      - Inventory Management
+      - Inventory
       - Order Management
       - Fulfillment
       - Supply Chain
