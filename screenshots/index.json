@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "warego",
+    "captured_at": "2026-10-11T193342",
+    "source_url": "https://www.warego.co/",
+    "source_type": "Website",
+    "file": "warego-2026-10-11T193342.png",
+    "bytes": 433494,
+    "capture": "playwright-local"
+  }
+]
